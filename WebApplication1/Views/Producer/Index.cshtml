@@ -1,0 +1,49 @@
+﻿@model List<Producer>
+
+@{
+    ViewData["Title"] = "List of Cinemas";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> @Html.DisplayNameFor(Model => Model.First().ProfilePicture)</th>
+
+                    <th> @Html.DisplayNameFor(Model => Model.First().FullName)</th>
+
+                    <th> @Html.DisplayNameFor(Model => Model.First().Bio)</th>
+
+                    <th> Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src=@item.ProfilePicture style="max-width:150px;" />
+                        </td>
+
+                        <td class="align-middle">
+                            @Html.DisplayFor(ModelItem => item.FullName)
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ModelItem => item.Bio)
+                        </td>
+
+                        <td class="align-middle">
+                            <a class="btn btn-primary"> <i class="bi bi-pencil-square" />Edit </a>
+                            <a class="btn btn-primary"><i class="bi bi-eye" />All </a>
+                            <a class="btn btn-primary"> <i class="bi bi-trash" />Delete</a>
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

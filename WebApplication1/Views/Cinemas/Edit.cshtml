@@ -1,0 +1,32 @@
+﻿@model Cinema
+
+@{
+    ViewData["Title"] = "Edit the Cinemas";
+}
+
+<div class="row text">
+    <div class="col-md-6 offset-3">
+        <div class="form-group">
+            <label asp-for="CinemaLogo" class="control-label"></label>
+            <input asp-for="CinemaLogo" class="form-control" />
+            <span asp-validation-for="CinemaLogo" class="text-danger" ></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+      <div class="form-group">
+            <a asp-controller="Cinemas" asp-action="Edit" class=" btn btn-success" asp-route-for ="@Model.Id"> Edit</a>
+            <a asp-controller="Cinemas" asp-action="Index" class="btn btn-primary"> Show All</a>
+      </div>
+
+    </div>
+</div>

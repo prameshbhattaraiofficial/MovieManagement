@@ -1,0 +1,43 @@
+﻿@model Actor
+
+@{ 
+    ViewData["Title"] = " Details of Actors";
+}
+
+<div class=" row text">
+    <div class="col-md-2 offset-2">
+     <p> Details for @Model.FullName
+     </p>
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="form-group text-center">
+                    <img class="border-info rounded-circle" style="max-width:150px;"  id="ProfilePicturePreview" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="profilepictureUrl" class="control-label"></label>
+                    <input asp-for="profilepictureUrl" class="form-control" readonly />
+                    <span asp-validation-for="profilepictureUrl" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FullName" class="control-label"></label>
+                    <input asp-for="FullName" class="form-control" readonly/>
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Bio" class="control-label"></label>
+                    <input asp-for="Bio" class="form-control" readonly/>
+                    <span asp-validation-for="Bio" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <a class="btn btn-success float-right" asp-action="Details" asp-route-id="@Model.ID">Edit</a>
+                    <a class="btn btn-success" asp-action="Index"> Show all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
